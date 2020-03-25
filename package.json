@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/makiwumi/README-Generator/issues"
   },
-  "homepage": "https://github.com/makiwumi/README-Generator#readme"
+  "homepage": "https://github.com/makiwumi/README-Generator#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
