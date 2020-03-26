@@ -41,3 +41,13 @@ const questions = [
         message: "Write tests for your applications"
     }
 ];
+
+function writeToFile(fileName, data){
+
+}
+
+function init(){
+
+}
+
+init();
