@@ -1,9 +1,9 @@
 // variables that are required and are constant
 
 const inquirer = require("inquirer");
-const axios = require("axios");
 const fs = require("fs");
 const util = require("util");
+const api = require("./utils/api")
 const readMeFile = require('./generateMarkdown');
 
 const writeFileAsync = util.promisify(fs.writeFile);
@@ -41,12 +41,12 @@ function promptUser(){
             {
                 type: "input",
                 name: "license",
-                message: "What are the limitations for your project?"
+                message: "What license are you using?"
             },
             {
                 type: "input",
                 name: "Contributing",
-                message: "Are there other developers that helped with your project?"
+                message: "Insert contributing information"
             },
             {
                 type: "input",
@@ -57,31 +57,31 @@ function promptUser(){
     )
 };
 
+module.exports = {
+    promptUser
+}
+
 //Get information from github api
-promptUser()
-  .then( (answers) => {
-    const md = readMeFile.generateReadMe(answers);
-    writeFileAsync("README.md", md);
-    return answers; 
-  })
-  .then( (answers) => {
-    const queryUrl = `https://api.github.com/users/${answers.github}/events/public`;
 
-    console.log(queryUrl);
-    axios.get(queryUrl).then( (response) => {
-      console.log(response.type);
-      let email = response.data[0].email;
-      let pic = response.data[0].avatar_url; 
+async function init(){
+    try{
+        const data = await promptUser();
 
-      console.log(email);
-      console.log(pic);
-      
-    });
-  })
-      
-  .then( () => {
-    console.log("ReadMe was successfully generated");
-  })
-  .catch(function(error) {
-    console.log(error);
-  });
+        const apiCall = await api.getUser(data.username);
+
+        const allInfo = {data,apiCall};
+
+        const readme = readMeFile.generateMarkdown(allInfo);
+
+        await writeFileAsync("GeneratedReadMe.md", readme);
+    }
+
+    //catch error or success
+    catch(error){
+        console.log(error);
+    }
+    finally{
+        console.log("ReadMe was successfully generated");
+    }
+}
+init();
