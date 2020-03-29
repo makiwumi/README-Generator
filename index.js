@@ -69,7 +69,7 @@ async function init(){
 
         const apiCall = await api.getUser(data.username);
 
-        const allInfo = {data,apiCall};
+        const allInfo = {...data,...apiCall};
 
         const readme = readMeFile.generateMarkdown(allInfo);
 

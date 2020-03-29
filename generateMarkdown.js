@@ -1,7 +1,8 @@
 function generateMarkdown(allInfo) {
-  return `
- 
+  return ` #  ${allInfo.title}
   ## Description
+
+  ${allInfo.description}
   
   ## Table of Contents
   
@@ -12,19 +13,25 @@ function generateMarkdown(allInfo) {
   * [Tests](#Tests) 
  
   ## Installation
-  
+  ${allInfo.description}
+
   ## Usage
-  
+  ${allInfo.description}
+
   ## License
   
-  Copyright (c).
+  ${allInfo.license}
 
   ## Contributing
   
-  ## Tests
-  
-}
+  ![GitHub contributors](https://img.shields.io/badge/contributor-${allInfo.username}-blue)
 
+  ## Tests
+
+  ${allInfo.tests}
+  `
+}
+// Print readme
 module.exports = {
   generateMarkdown:generateMarkdown
 }
