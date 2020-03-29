@@ -5,11 +5,11 @@ function generateMarkdown(allInfo) {
   
   ## Table of Contents
   
-  1. [Installation](#Installation)
-  2. [Usage](#Usage)
-  3. [License](#License)
-  4. [Contributing](#Contributing)
-  5. [Tests](#Tests) 
+  * [Installation](#Installation)
+  * [Usage](#Usage)
+  * [License](#License)
+  * [Contributing](#Contributing)
+  * [Tests](#Tests) 
  
   ## Installation
   
@@ -19,7 +19,6 @@ function generateMarkdown(allInfo) {
   
   Copyright (c).
 
-  
   ## Contributing
   
   ## Tests
