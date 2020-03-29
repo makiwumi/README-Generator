@@ -45,8 +45,8 @@ function promptUser(){
             },
             {
                 type: "input",
-                name: "Contributing",
-                message: "Insert contributing information"
+                name: "contributing",
+                message: "Insert contributing usernames"
             },
             {
                 type: "input",

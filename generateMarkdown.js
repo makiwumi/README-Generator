@@ -20,11 +20,11 @@ function generateMarkdown(allInfo) {
 
   ## License
   
-  ${allInfo.license}
+  Copyright (c) ${allInfo.license}
 
   ## Contributing
   
-  ![GitHub contributors](https://img.shields.io/badge/contributor-${allInfo.username}-blue)
+  ![GitHub contributors](https://img.shields.io/badge/contributor-${allInfo.contributing}-blue)
 
   ## Tests
 

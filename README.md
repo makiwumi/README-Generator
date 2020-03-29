@@ -18,3 +18,13 @@ Node
 ## Usage
 
 Using node to generate a readme for a git project
+
+## License
+Copyright (c) Marian Akiwumi
+
+## Contributing
+No one
+
+## Tests
+
+no tests used
