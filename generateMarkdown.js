@@ -13,10 +13,10 @@ function generateMarkdown(allInfo) {
   * [Tests](#Tests) 
  
   ## Installation
-  ${allInfo.description}
+  ${allInfo.installation}
 
   ## Usage
-  ${allInfo.description}
+  ${allInfo.usage}
 
   ## License
   
